@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.0</version>
-    <date>2016-08-12T07:21:16Z</date>
+    <version>3.4</version>
+    <date>2018-10-10T07:39:27Z</date>
     <groups>
         <group>
-            <name>hadoop.hbase</name>
-        </group>
-        <group>
-            <name>Kafka</name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
         <template>
-            <template>Kafka</template>
-            <name>Kafka</name>
+            <template>Template App Kafka JMX</template>
+            <name>Template App Kafka JMX</name>
             <description/>
             <groups>
                 <group>
-                    <name>hadoop.hbase</name>
-                </group>
-                <group>
-                    <name>Kafka</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
@@ -33,17 +27,15 @@
                     <name>G1 Old Generation Count</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Old Generation&quot;,&quot;CollectionCount&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -51,11 +43,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -71,22 +60,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>G1 Young Generation Count</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,&quot;CollectionCount&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -94,11 +84,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -114,22 +101,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Leader election rate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -137,11 +125,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -157,22 +142,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Unclean leader election rate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -180,11 +166,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -200,22 +183,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Is controller active on broker</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.controller:type=KafkaController,name=ActiveControllerCount&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -223,11 +207,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -243,22 +224,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>LogFlushStats 50thPercentile</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;50thPercentile&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -266,11 +248,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -286,22 +265,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>LogFlushStats 75thPercentile</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;75thPercentile&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -309,11 +289,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -329,22 +306,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>LogFlushStats 95thPercentile</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -352,11 +330,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -372,22 +347,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>LogFlushStats Count</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Count</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -395,11 +371,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -415,22 +388,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request being processed at the leader Fetch-Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -438,11 +412,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -458,22 +429,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request being processed at the leader Fetch-Follower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -481,11 +453,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -501,22 +470,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request being processed at the leader Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -524,11 +494,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -544,22 +511,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waits for the follower Fetch-Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -567,11 +535,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -587,22 +552,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waits for the follower Fetch-Follower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -610,11 +576,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -630,22 +593,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waits for the follower Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -653,11 +617,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -673,22 +634,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waiting in the request queue Fetch-Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -696,11 +658,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -716,22 +675,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waiting in the request queue Fetch-Follower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -739,11 +699,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -759,22 +716,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time the request waiting in the request queue Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -782,11 +740,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -802,22 +757,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request rate Fetch Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -825,11 +781,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -845,22 +798,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request rate FetchFollower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -868,11 +822,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -888,22 +839,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request rate Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -911,11 +863,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -931,22 +880,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time to send the response Fetch-Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -954,11 +904,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -974,22 +921,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time to send the response Fetch-Follower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -997,11 +945,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1017,22 +962,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Time to send the response Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1040,11 +986,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1060,22 +1003,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request total time Fetch-Consumer</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1083,11 +1027,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1103,22 +1044,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request total time Fetch-Follower</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1126,11 +1068,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1146,22 +1085,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Request total time Produce</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>ms</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1169,11 +1109,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1189,22 +1126,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>The average fraction of time the network processors are idle</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1212,11 +1150,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1232,22 +1167,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes In Per Sec FifteenMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1255,11 +1191,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1275,22 +1208,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes In Per Sec FiveMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1298,11 +1232,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1318,22 +1249,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes In Per Sec MeanRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;MeanRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1341,11 +1273,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1361,22 +1290,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes In Per Sec OneMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1384,11 +1314,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1404,22 +1331,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes Out Per Sec FifteenMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1427,11 +1355,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1447,22 +1372,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes Out Per Sec FiveMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1470,11 +1396,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1490,22 +1413,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes Out Per Sec MeanRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;MeanRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1513,11 +1437,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1533,22 +1454,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Bytes Out Per Sec OneMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1556,11 +1478,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1576,22 +1495,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Messages In Per Sec FifteenMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1599,11 +1519,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1619,22 +1536,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Messages In Per Sec FiveMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1642,11 +1560,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1662,22 +1577,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Messages In Per Sec MeanRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;MeanRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1685,11 +1601,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1705,22 +1618,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Messages In Per Sec OneMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1728,11 +1642,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1748,22 +1659,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Lag in messages per follower replica partition 0</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=FetcherLagMetrics,name=ConsumerLag,clientId=ReplicaFetcherThread-0-1,topic=PatientDataStream,partition=0&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1771,11 +1683,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1791,22 +1700,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Lag in messages per follower replica partition 1</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=FetcherLagMetrics,name=ConsumerLag,clientId=ReplicaFetcherThread-0-1,topic=PatientDataStream,partition=1&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1814,11 +1724,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1834,22 +1741,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Requests waiting in the fetch purgatory</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=FetchRequestPurgatory,name=PurgatorySize&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1857,11 +1765,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1877,22 +1782,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>The average fraction of time the request handler threads are idle FifteenMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1900,11 +1806,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1920,22 +1823,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>The average fraction of time the request handler threads are idle FiveMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent&quot;,&quot;FiveMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1943,11 +1847,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -1963,22 +1864,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>The average fraction of time the request handler threads are idle OneMinuteRate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent&quot;,&quot;OneMinuteRate&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1986,11 +1888,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2006,22 +1905,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Requests waiting in the producer purgatory</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ProducerRequestPurgatory,name=PurgatorySize&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2029,11 +1929,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2049,22 +1946,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Max lag in messages btw follower and leader replicas</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaFetcherManager,name=MaxLag,clientId=Replica&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2072,11 +1970,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2092,22 +1987,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>ISR expansion rate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaManager,name=IsrExpandsPerSec&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2115,11 +2011,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2135,22 +2028,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>ISR shrink rate</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaManager,name=IsrShrinksPerSec&quot;,&quot;Count&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2158,11 +2052,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2178,22 +2069,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Leader replica counts</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaManager,name=LeaderCount&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2201,11 +2093,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2221,22 +2110,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Partition Count</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaManager,name=PartitionCount&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2244,11 +2134,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2264,22 +2151,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name># of under replicated partitions (|ISR| &lt; |all replicas|)</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions&quot;,&quot;Value&quot;]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2287,11 +2175,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2307,22 +2192,105 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
-                    <name>HeapMemoryUsage</name>
+                    <name>mem Heap Memory committed</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>jmx[java.lang:type=Memory,HeapMemoryUsage.committed]</key>
+                    <delay>30</delay>
+                    <history>30d</history>
+                    <trends>90d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username>{$JMX_USER}</username>
+                    <password>{$JMX_PASS}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kafka</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>mem Heap Memory max</name>
+                    <type>16</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jmx[java.lang:type=Memory,HeapMemoryUsage.max]</key>
+                    <delay>30</delay>
+                    <history>30d</history>
+                    <trends>90d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username>{$JMX_USER}</username>
+                    <password>{$JMX_PASS}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kafka</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>mem Heap Memory used</name>
+                    <type>16</type>
+                    <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=Memory,HeapMemoryUsage.used]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2330,11 +2298,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2350,22 +2315,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>NonHeapMemoryUsage</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=Memory,NonHeapMemoryUsage.used]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2373,11 +2339,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2393,22 +2356,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Open File Descriptor Count</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=OperatingSystem,OpenFileDescriptorCount]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2416,11 +2380,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2436,22 +2397,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Daemon threads</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=Threading,DaemonThreadCount]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2459,11 +2421,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2479,22 +2438,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Peak threads</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=Threading,PeakThreadCount]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2502,11 +2462,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2522,22 +2479,23 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Live threads</name>
                     <type>16</type>
                     <snmp_community/>
-                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[java.lang:type=Threading,ThreadCount]</key>
                     <delay>30</delay>
-                    <history>30</history>
-                    <trends>90</trends>
+                    <history>30d</history>
+                    <trends>90d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
-                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2545,11 +2503,8 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
-                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username>{$JMX_USER}</username>
                     <password>{$JMX_PASS}</password>
@@ -2565,6 +2520,9 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <master_item/>
                 </item>
             </items>
             <discovery_rules>
@@ -2573,7 +2531,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>jmx_discovery[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic=InReplicationCacheTopic,partition=*&quot;,{HOST.CONN}:12345,{$JMX_USER},{$JMX_PASS}]</key>
+                    <key>jmx_discovery[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic=InReplicationCacheTopic,partition=*&quot;,{HOST.CONN}:{$JMX_PORT},{$JMX_USER},{$JMX_PASS}]</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -2584,12 +2542,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
                     <authtype>0</authtype>
-                    <username>{$JMX_USER}</username>
-                    <password>{$JMX_PASS}</password>
+                    <username/>
+                    <password/>
                     <publickey/>
                     <privatekey/>
                     <port/>
@@ -2598,24 +2555,22 @@
                         <formula/>
                         <conditions/>
                     </filter>
-                    <lifetime>30</lifetime>
+                    <lifetime>30d</lifetime>
                     <description/>
                     <item_prototypes>
                         <item_prototype>
                             <name>{#PROPTOPIC} Under Replicated Partition {#PROPPARTITION}</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic={#PROPTOPIC},partition={#PROPPARTITION}&quot;,&quot;Value&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units/>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2623,11 +2578,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2643,30 +2595,40 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Kafka:jmx[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic={#PROPTOPIC},partition={#PROPPARTITION}&quot;,&quot;Value&quot;].last()}=1</expression>
-                            <name>{#PROPTOPIC} has under replicated partition {#PROPPARTITION}</name>
+                            <expression>{Template App Kafka JMX:jmx[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic={#PROPTOPIC},partition={#PROPPARTITION}&quot;,&quot;Value&quot;].last()}=1</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Kafka: {#PROPTOPIC} has under replicated partition {#PROPPARTITION}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
+                    <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
                     <name>BytesPerSec and MessagesInPerSec Per Topic</name>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>jmx_discovery[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*&quot;,{HOST.CONN}:12345,{$JMX_USER},{$JMX_PASS}]</key>
+                    <key>jmx_discovery[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*&quot;,{HOST.CONN}:{$JMX_PORT},{$JMX_USER},{$JMX_PASS}]</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -2677,12 +2639,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
                     <authtype>0</authtype>
-                    <username>{$JMX_USER}</username>
-                    <password>{$JMX_PASS}</password>
+                    <username/>
+                    <password/>
                     <publickey/>
                     <privatekey/>
                     <port/>
@@ -2691,24 +2652,22 @@
                         <formula/>
                         <conditions/>
                     </filter>
-                    <lifetime>30</lifetime>
+                    <lifetime>30d</lifetime>
                     <description/>
                     <item_prototypes>
                         <item_prototype>
                             <name>{#PROPTOPIC} BytesOutPerSec FifteenMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2716,11 +2675,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2736,23 +2692,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} BytesOutPerSec FiveMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2760,11 +2717,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2780,23 +2734,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} BytesOutPerSec MeanRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2804,11 +2759,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2824,23 +2776,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} BytesOutPerSec OneMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2848,11 +2801,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2868,23 +2818,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC}  MessagesInPerSec FifteenMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2892,11 +2843,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2912,23 +2860,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC}  MessagesInPerSec FiveMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2936,11 +2885,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -2956,23 +2902,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC}  MessagesInPerSec MeanRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2980,11 +2927,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3000,23 +2944,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC}  MessagesInPerSec OneMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -3024,11 +2969,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3044,23 +2986,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} {#PROPNAME} FifteenMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -3068,11 +3011,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3088,23 +3028,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} {#PROPNAME} FiveMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -3112,11 +3053,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3132,23 +3070,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} {#PROPNAME} MeanRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -3156,11 +3095,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3176,23 +3112,24 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>{#PROPTOPIC} {#PROPNAME} OneMinuteRate</name>
                             <type>16</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                             <delay>30</delay>
-                            <history>15</history>
-                            <trends>365</trends>
+                            <history>15d</history>
+                            <trends>365d</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -3200,11 +3137,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username>{$JMX_USER}</username>
                             <password>{$JMX_PASS}</password>
@@ -3220,7 +3154,10 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes/>
@@ -3251,7 +3188,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3263,7 +3200,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3275,7 +3212,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3287,7 +3224,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3299,7 +3236,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3311,7 +3248,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3323,7 +3260,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3335,7 +3272,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name={#PROPNAME},topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3367,7 +3304,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;FifteenMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3379,7 +3316,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;FiveMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3391,7 +3328,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;MeanRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3403,7 +3340,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Kafka</host>
+                                        <host>Template App Kafka JMX</host>
                                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic={#PROPTOPIC}&quot;,&quot;OneMinuteRate&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -3411,103 +3348,212 @@
                         </graph_prototype>
                     </graph_prototypes>
                     <host_prototypes/>
+                    <jmx_endpoint/>
                 </discovery_rule>
             </discovery_rules>
-            <macros/>
+            <httptests/>
+            <macros>
+                <macro>
+                    <macro>{$JMX_PORT}</macro>
+                    <value>9093</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
-            <name>Leader election has occurred in last 15m</name>
-            <url/>
-            <status>1</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.controller:type=KafkaController,name=ActiveControllerCount&quot;,&quot;Value&quot;].last()}=1</expression>
-            <name>Controller on broker is active</name>
-            <url/>
-            <status>1</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.server:type=ReplicaManager,name=IsrExpandsPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
-            <name>ISR has increased in last 15m</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.server:type=ReplicaManager,name=IsrShrinksPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
-            <name>ISR has decreased in last 15m</name>
-            <url/>
-            <status>1</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;].last()}&gt;10</expression>
-            <name>Log flush latency (95th percentile) &gt; 10ms</name>
+            <expression>({Template App Kafka JMX:jmx[java.lang:type=Memory,HeapMemoryUsage.used].last()}/{Template App Kafka JMX:jmx[java.lang:type=Memory,HeapMemoryUsage.max].last()})&gt;0.8</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: 80% mem Heap Memory used on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;].last()}&gt;20</expression>
-            <name>Log flush latency (95th percentile) &gt; 20ms</name>
+            <expression>({Template App Kafka JMX:jmx[java.lang:type=Memory,HeapMemoryUsage.used].last()}/{Template App Kafka JMX:jmx[java.lang:type=Memory,HeapMemoryUsage.max].last()})&gt;0.9</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: 90% mem Heap Memory used on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.server:type=ReplicaFetcherManager,name=MaxLag,clientId=Replica&quot;,&quot;Value&quot;].last()}&gt;4000</expression>
-            <name>Max lag in messages btw follower and leader replicas &gt; 4000</name>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.controller:type=KafkaController,name=ActiveControllerCount&quot;,&quot;Value&quot;].last()}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Controller on broker is active</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.server:type=ReplicaManager,name=IsrShrinksPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: ISR has decreased in last 15m</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.server:type=ReplicaManager,name=IsrExpandsPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: ISR has increased in last 15m</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[java.lang:type=Memory,HeapMemoryUsage.max].nodata(5m)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: JMX {HOST.NAME} is not reachable</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Leader election has occurred in last 15m</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;].last()}&gt;10</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Log flush latency (95th percentile) &gt; 10ms</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;].last()}&gt;20</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Log flush latency (95th percentile) &gt; 20ms</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.server:type=ReplicaFetcherManager,name=MaxLag,clientId=Replica&quot;,&quot;Value&quot;].last()}&gt;4000</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Max lag in messages btw follower and leader replicas &gt; 4000</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
-            <name>Unclean leader election has occurred last 15m</name>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec&quot;,&quot;Count&quot;].delta(900)}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Unclean leader election has occurred last 15m</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
-            <expression>{Kafka:jmx[&quot;kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions&quot;,&quot;Value&quot;].last()}&lt;&gt;0</expression>
-            <name>Under replicated partitions</name>
+            <expression>{Template App Kafka JMX:jmx[&quot;kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions&quot;,&quot;Value&quot;].last()}&lt;&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Kafka: Under replicated partitions</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
     </triggers>
     <graphs>
@@ -3537,7 +3583,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3549,7 +3595,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3581,7 +3627,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3593,7 +3639,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3625,7 +3671,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;MeanRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3637,7 +3683,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;MeanRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3669,7 +3715,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3681,7 +3727,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3713,7 +3759,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Old Generation&quot;,&quot;CollectionCount&quot;]</key>
                     </item>
                 </graph_item>
@@ -3725,7 +3771,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,&quot;CollectionCount&quot;]</key>
                     </item>
                 </graph_item>
@@ -3757,7 +3803,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=Memory,HeapMemoryUsage.used]</key>
                     </item>
                 </graph_item>
@@ -3769,7 +3815,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=Memory,NonHeapMemoryUsage.used]</key>
                     </item>
                 </graph_item>
@@ -3801,7 +3847,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;50thPercentile&quot;]</key>
                     </item>
                 </graph_item>
@@ -3813,7 +3859,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;75thPercentile&quot;]</key>
                     </item>
                 </graph_item>
@@ -3825,7 +3871,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs&quot;,&quot;95thPercentile&quot;]</key>
                     </item>
                 </graph_item>
@@ -3857,7 +3903,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;OneMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3869,7 +3915,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;FifteenMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3881,7 +3927,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;FiveMinuteRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3893,7 +3939,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec&quot;,&quot;MeanRate&quot;]</key>
                     </item>
                 </graph_item>
@@ -3925,7 +3971,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=OperatingSystem,OpenFileDescriptorCount]</key>
                     </item>
                 </graph_item>
@@ -3957,7 +4003,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -3969,7 +4015,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -3981,7 +4027,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4013,7 +4059,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=FetchRequestPurgatory,name=PurgatorySize&quot;,&quot;Value&quot;]</key>
                     </item>
                 </graph_item>
@@ -4025,7 +4071,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.server:type=ProducerRequestPurgatory,name=PurgatorySize&quot;,&quot;Value&quot;]</key>
                     </item>
                 </graph_item>
@@ -4057,7 +4103,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4069,7 +4115,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4081,7 +4127,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4113,7 +4159,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=Threading,ThreadCount]</key>
                     </item>
                 </graph_item>
@@ -4125,7 +4171,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=Threading,PeakThreadCount]</key>
                     </item>
                 </graph_item>
@@ -4137,7 +4183,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[java.lang:type=Threading,DaemonThreadCount]</key>
                     </item>
                 </graph_item>
@@ -4169,7 +4215,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4181,7 +4227,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4193,7 +4239,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=LocalTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4225,7 +4271,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4237,7 +4283,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4249,7 +4295,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4281,7 +4327,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4293,7 +4339,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4305,7 +4351,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4337,7 +4383,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=FetchConsumer&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4349,7 +4395,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=FetchFollower&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
@@ -4361,7 +4407,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Kafka</host>
+                        <host>Template App Kafka JMX</host>
                         <key>jmx[&quot;kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=Produce&quot;,&quot;Count&quot;]</key>
                     </item>
                 </graph_item>
