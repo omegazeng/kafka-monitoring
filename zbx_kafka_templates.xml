@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-10-10T07:39:27Z</date>
+    <date>2018-10-11T08:09:48Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2531,7 +2531,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>jmx_discovery[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic=InReplicationCacheTopic,partition=*&quot;,{HOST.CONN}:{$JMX_PORT},{$JMX_USER},{$JMX_PASS}]</key>
+                    <key>jmx_discovery[&quot;kafka.cluster:type=Partition,name=UnderReplicated,topic=InReplicationCacheTopic,partition=*&quot;,{HOST.CONN}:{HOST.PORT},{$JMX_USER},{$JMX_PASS}]</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -2628,7 +2628,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>jmx_discovery[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*&quot;,{HOST.CONN}:{$JMX_PORT},{$JMX_USER},{$JMX_PASS}]</key>
+                    <key>jmx_discovery[&quot;kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*&quot;,{HOST.CONN}:{HOST.PORT},{$JMX_USER},{$JMX_PASS}]</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>

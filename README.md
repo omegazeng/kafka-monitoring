@@ -7,14 +7,16 @@
 
 Zabbix server config file (/etc/zabbix/zabbix_server.conf) add:
 
-    JavaGateway=localhost
+    JavaGateway=localhost   #zabbix-java-gateway-ip
     JavaGatewayPort=10052
     StartJavaPollers=5
 
-Restart zabbix server
+Restart Zabbix server
 
     service zabbix-java-gateway restart
     service zabbix-server restart
+
+*Note: Check the JavaGatewayPort is listening.*
 
 ## Kafka configuration
 [How to enable Kafka JMX](https://stackoverflow.com/questions/36708384/enable-jmx-on-kafka-brokers)
@@ -46,43 +48,43 @@ WorkingDirectory=/data/kafka/
 [Install]
 WantedBy=multi-user.target
 ```
-Restart kafka server
+Restart Kafka server
 
+    systemctl daemon-reload
     service kafka restart
 
-# Zabbix configuration
+*Note: Check the JMX_PORT is listening.*
 
-# Upload scripts for discovery JMX
+# Zabbix configuration
+## Upload scripts for discovery JMX
 
      git clone https://github.com/omegazeng/kafka-monitoring.git 
      cd kafka-monitoring/
      cp jmx_discovery /etc/zabbix/externalscripts
      cp JMXDiscovery-0.0.1.jar /etc/zabbix/externalscripts
 
-## Import template
-Log in to your zabbix web
-
-**Click Configuration->Templates->Import**
-
-Download template [zbx_kafka_templates.xml](https://github.com/omegazeng/kafka-monitoring/blob/master/zbx_kafka_templates.xml) and upload to zabbix
-Then add this template to Kafka and configure JMX interfaces on zabbix 
+## Configuring JMX interfaces
+**Click Configuration->Hosts->Kafka Hosts->JMX interfaces->Add**
 
 Enter Kafka IP address and JMX port
-If you see jmx icon, you configured JMX monitoring  good!
+
+## Import template
+Download template [zbx_kafka_templates.xml](https://github.com/omegazeng/kafka-monitoring/blob/master/zbx_kafka_templates.xml)
+
+Log in to your zabbix web
+**Click Configuration->Templates->Import**
+
+Link Kafka host to this template or add this template to Kafka hosts group.
+
+*Note: You can set JMX_USER and JMX_PASS in Template Macros.*
 
 # Troubles 
-if you have problems you can check JMX using this script
-     #!/usr/bin/env bash
-     
-     ZBXGET="/usr/bin/zabbix_get"
-     if [ $# != 5 ]
-     then
-     echo "Usage: $0 <JAVA_GATEWAY_HOST> <JAVA_GATEWAY_PORT> <JMX_SERVER> <JMX_PORT> <KEY>"
-     exit;
-     fi
-     QUERY="{\"request\": \"java gateway jmx\",\"conn\": \"$3\",\"port\": $4,\"keys\": [\"$5\"]}"
-     $ZBXGET -s $1 -p $2 -k "$QUERY"
+If you have problems you can check JMX using this script
 
-**eg.:** ./zabb_get_java  zabbix-java-gateway-ip 10052 server-test-ip 12345 
-'jmx[java.lang:type=Threading,PeakThreadCount]'
+[zabbix_get_jmx_3.4.7.sh](https://support.zabbix.com/secure/attachment/59538/zabbix_get_jmx_3.4.7.sh)
 
+**eg.:** bash zabbix_get_jmx_3.4.7.sh  zabbix-java-gateway-ip 10052 server-test-ip 9093
+'jmx[java.lang:type=Runtime,Uptime]'
+
+    bash zabbix_get_jmx_3.4.7.sh localhost 10052 ip-x-x-x-x 9093 'jmx[java.lang:type=Runtime,Uptime]'
+    {"data":[{"value":"1036057113"}],"response":"success"}
